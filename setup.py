@@ -1,12 +1,13 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="tapedeck",
     version="0.1",
-    py_modules=["cli"],
+    packages=find_packages("src"),
+    package_dir={'': 'src'},
     install_requires=["Click"],
     entry_points='''
         [console_scripts]
-        tapedeck=cli:tapedeck
+        tapedeck=tapedeck.scripts.cli:tapedeck
         '''
 )
